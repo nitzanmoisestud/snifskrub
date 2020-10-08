@@ -14,9 +14,21 @@ rooms.forEach(room => {
 
 function openRoom(event){
     console.log(event.currentTarget.dataset.room);
-    rooms.forEach(room => {
-        room.style.display = "none"
-        });
+    let dataRoom = event.currentTarget.dataset.room
+    const fox = document.querySelector(".snif");
+    
+    fox.classList.add(`goto${dataRoom}`)
+
+    setTimeout(() => {
+        
+        fox.classList.add('shrink')
+        console.log(fox);
+        rooms.forEach(room => {
+            room.style.display = "none"
+            fox.style.display = "none"
+
+            });
+    }, 3000);
 }
 
 

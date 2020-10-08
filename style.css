@@ -30,9 +30,75 @@ svg > .rooms>.livingroom{
     y: 450;
     cursor: pointer;
 } 
-svg> .snif{
+/* svg> .snif{
    width: 250px;
    x:65vw;
    y: 50vh;
 
+} */
+
+.snif {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 30vh;
+    left: 45vw;
+}
+
+
+
+/* Home page to room animations */
+
+@keyframes toroom{
+    0%{
+        transform: scale(1);
+        offset-rotate:  0deg;
+
+    }
+    50%{
+        transform: scale(1);
+        offset-distance: 100%;
+
+        offset-rotate:  0deg;
+    }
+   
+    100%{
+        offset-distance: 100%;
+        offset-rotate:  0deg;
+        transform: scale(0);
+
+
+    }
+}
+
+
+@keyframes shrink{
+    0%{
+        transform: rotate(0);
+      
+
+    }
+  
+    100%{
+        transform: rotate(360deg);
+
+
+
+    }
+}
+.gotobathroom{
+    offset-path: path("M 45 80 C 50 20  150 -50 490 -80");
+    animation: toroom 3s linear forwards;
+}
+.gotokitchen{
+    offset-path: path("M 45 80 C  -80 300  -250 240 -330 220");
+    animation: toroom 3s linear forwards;
+}
+.gotobedroom{
+    offset-path: path("M 45 80 C -50 -60  -250 -120 -360 -50");
+    animation: toroom 3s linear forwards;
+}
+.gotolivingroom{
+    offset-path: path("M 45 100 C 80 300  250 240 490 180");
+    animation: toroom 3s linear forwards;
 }
