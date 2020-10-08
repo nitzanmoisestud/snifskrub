@@ -1,59 +1,38 @@
-main > #rooms{
-    display: grid;
-    grid-template-columns:  1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-column-start: 1;
-    grid-column-end: -1;
-    
-  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 2rem; */
-  /* padding: 5%; */
-  align-items: center;
 
-  
-  
-}
-main{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    align-items: center;
-    justify-content: center;
 
-}
-.room > img{
-    
-    width: 200px;
+/* SVG home page */
+
+svg>.rooms> .bedroom{
+    width: 400px;
     height: auto;
-    padding: 5%;
+    x: 100px;
+    y: 100;
     cursor: pointer;
-    
-    
 }
-.room{
-    
-    justify-self: center;
+svg > .rooms> .kitchen{
+    width: 250px;
+    height: auto;
+    x: 200px;
+    y: 450;
+    cursor: pointer;
 }
-.room:first-child> img{
-    grid-column-start: 1;
-    grid-row-start: 1;
-
+svg > .rooms> .bathroom{
+    width: 300px;
+    height: auto;
+    x: 1500px;
+    y: 50;
+    cursor: pointer;
 }
-.room:nth-child(2){
-    grid-column-start: 2;
-    grid-row-start: 1;
-
-}
-.room:nth-child(2) img{
-    width: 150px;
-
-}
-.room:nth-child(3){
-    grid-column-start: 1;
-    grid-row-start: 2;
-
-}
-.room:nth-child(4){
-    grid-column-start: 2;
-    grid-row-start: 2;
+svg > .rooms>.livingroom{
+    width: 300px;
+    height: auto;
+    x: 1500px;
+    y: 450;
+    cursor: pointer;
+} 
+svg> .snif{
+   width: 250px;
+   x:65vw;
+   y: 50vh;
 
 }

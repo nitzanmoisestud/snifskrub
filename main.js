@@ -3,7 +3,7 @@
 window.addEventListener('load', start)
 
 // Global variables
-const rooms = document.querySelectorAll('.room');
+const rooms = document.querySelectorAll('.room-icon');
 
 function start(){
 console.log('start');
