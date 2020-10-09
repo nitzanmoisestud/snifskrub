@@ -2,6 +2,7 @@
 
 /* SVG home page */
 
+
 svg>.rooms> .bedroom{
     width: 400px;
     height: auto;
@@ -30,19 +31,15 @@ svg > .rooms>.livingroom{
     y: 450;
     cursor: pointer;
 } 
-/* svg> .snif{
-   width: 250px;
-   x:65vw;
-   y: 50vh;
 
-} */
 
 .snif {
-    width: 150px;
-    height: auto;
-    position: absolute;
-    top: 30vh;
-    left: 45vw;
+    width: 200px;
+    y: 380px;
+    x: 880px;
+    transform-origin:50% 50%;
+    transform-box: fill-box; 
+
 }
 
 
@@ -53,7 +50,7 @@ svg > .rooms>.livingroom{
     0%{
         transform: scale(1);
         offset-rotate:  0deg;
-
+        
     }
     50%{
         transform: scale(1);
@@ -66,28 +63,38 @@ svg > .rooms>.livingroom{
         offset-distance: 100%;
         offset-rotate:  0deg;
         transform: scale(0);
-
+        
 
     }
 }
 
 
-@keyframes shrink{
+@keyframes swall{
     0%{
-        transform: rotate(0);
-      
-
+        transform: scale(1);
+        
+        
     }
-  
+    50%{
+        transform: scale(1.05);
+ 
+    }
+    
     100%{
-        transform: rotate(360deg);
-
-
-
+        transform: scale(1);
+        
+        
+        
     }
+}
+.room-icon{
+    transform-origin:50% 50%;
+    transform-box: fill-box; 
+    animation: swall 1s infinite ease-in-out ;
+
 }
 .gotobathroom{
-    offset-path: path("M 45 80 C 50 20  150 -50 490 -80");
+    offset-path: path("M 880 380 C 1200 80  1300 50 1680 180");
     animation: toroom 3s linear forwards;
 }
 .gotokitchen{
@@ -101,4 +108,19 @@ svg > .rooms>.livingroom{
 .gotolivingroom{
     offset-path: path("M 45 100 C 80 300  250 240 490 180");
     animation: toroom 3s linear forwards;
+}
+
+
+/* Clipping path */
+
+#ring{
+    stroke: palevioletred;
+    stroke-width: 2;
+    cursor: pointer;
+    
+}
+
+
+.domBgImage{
+    display: none;
 }

@@ -7,18 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+    <!-- viewBox="0 0 1920 1080" -->
+    <svg  xmlns="http://www.w3.org/2000/svg"     
+    >
         <g class="rooms">
 
             <image  class="room-icon bedroom" data-room="bedroom" href="assets/bed.svg" />
             <image class="room-icon bathroom" data-room="bathroom" href="assets/PeterM-Toilet-paper-roll-revisited.svg" />
             <image   class="room-icon kitchen" data-room="kitchen" href="assets/1515133637.svg" />
             <image  class="room-icon livingroom" data-room="livingroom" href="assets/publicdomainq-tv.svg" />
+
+    <!-- Snif -->
+            <image href="assets/Snif-logo-01.svg" class="snif" alt="snif">
         </g>
+        <defs>
+            <clipPath id="looking-glass">
+                <circle id="mask-ring" />
+            </clipPath>
+        </defs>
+        <image id="bgImage" href="" ></image>
+        <g id="elements" clip-path="url(#looking-glass)"></g>
+        
+        
+        <circle id="ring" stroske="red" fill="transparent" stroke-width="2"/>
         
     </svg>
-   <img src="assets/Snif-logo-01.svg" class="snif" alt="snif">
-    
+    <div id="domElements"></div>
+        
     <script src="main.js"></script>
+    <script src="clipmask.js"></script>
 </body>
 </html>
