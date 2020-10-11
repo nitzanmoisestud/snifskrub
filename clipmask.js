@@ -2,7 +2,6 @@
 
 // init
 
-// const picture = document.getElementById("domBgImage");
 const picture = document.querySelector("#bgImage");
 
 console.log(picture);
@@ -28,10 +27,11 @@ let keyL = false;
 let keyU = false;
 let keyD = false;
 
+
 function startScratch() {
   console.log("start");
 
-  console.log(window.innerWidth);
+
   document
     .querySelector("svg")
     .setAttribute("viewBox", `0 0 ${width} ${highet}`);
@@ -103,10 +103,17 @@ function mouseUp() {
 
 // key down code
 
-function moveGlass(posX, posY) {
-  ring.setAttribute("cx", posX);
-  ring.setAttribute("cy", posY);
 
-  maskRing.setAttribute("cx", posX);
-  maskRing.setAttribute("cy", posY);
+
+function moveGlass(posX,posY){
+    ring.setAttribute("cx", posX);
+    ring.setAttribute("cy", posY);
+    
+    maskRing.setAttribute("cx", posX);
+    maskRing.setAttribute("cy", posY);
+    
+ 
+
+
 }
+

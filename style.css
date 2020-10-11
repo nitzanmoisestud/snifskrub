@@ -1,11 +1,13 @@
 /* SVG home page */
 
+
 svg > .rooms > .bedroom {
   width: 400px;
   height: auto;
   x: 100px;
   y: 100;
   cursor: pointer;
+
 }
 svg > .rooms > .kitchen {
   width: 250px;
@@ -14,6 +16,7 @@ svg > .rooms > .kitchen {
   y: 450;
   cursor: pointer;
 }
+
 svg > .rooms > .bathroom {
   width: 300px;
   height: auto;
@@ -28,7 +31,6 @@ svg > .rooms > .livingroom {
   y: 450;
   cursor: pointer;
 }
-
 .snif {
   width: 200px;
   y: 380px;
@@ -58,17 +60,32 @@ svg > .rooms > .livingroom {
   }
 }
 
-@keyframes swall {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
 
-  100% {
-    transform: scale(1);
-  }
+@keyframes swall{
+    0%{
+        transform: scale(1);
+        
+        
+    }
+    50%{
+        transform: scale(1.05);
+ 
+    }
+    
+    100%{
+        transform: scale(1);
+        
+        
+        
+    }
+}
+.room-icon{
+    transform-origin:50% 50%;
+    transform-box: fill-box; 
+    animation: swall 1s infinite ease-in-out ;
+    cursor: pointer;
+    pointer-events: painted;
+
 }
 .room-icon {
   transform-origin: 50% 50%;
@@ -94,14 +111,12 @@ svg > .rooms > .livingroom {
 
 /* Clipping path */
 
+
 #ring {
   stroke: palevioletred;
   stroke-width: 2;
   cursor: pointer;
-}
 
-.domBgImage {
-  display: none;
 }
 
 #ring {
