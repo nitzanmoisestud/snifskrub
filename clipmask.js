@@ -16,7 +16,7 @@ const maskRing = document.getElementById("mask-ring");
 
 const width = 256;
 const highet = 160;
-const glassRadius = 5;
+const glassRadius = 10;
 
 // key down
 
