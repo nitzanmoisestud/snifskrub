@@ -38,7 +38,8 @@ function openRoom(event){
             fox.classList.remove(`goto${dataRoom}`)
 
             });
-           
+            
+
     }, 3000);
 }
 
@@ -64,12 +65,30 @@ async function loadElementsSvg(room){
 
   
 
-
+  
   function renderToSvgBox(){
     let use = document.createElementNS("http://www.w3.org/2000/svg", "use");
     use.setAttribute('href', "#domElements");
     const elements = document.querySelector("#elements");
+
     elements.appendChild(use)
     console.log(use);
+    const icons = document.querySelectorAll('.cls-1')
+            console.log(icons);
+            icons.forEach(icon =>{
+              icon.addEventListener('click', collectIcon)
+              console.log(icon);
+              icon.style.position = "absolute"
+              icon.style.top = "0"
+              icon.style.cursor = 'pointer'
+
+              icon.style.pointerEvents = 'painted'
+
+            })
   }
   
+
+
+function collectIcon(event){
+  console.log(event.target);
+}

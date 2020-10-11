@@ -2,13 +2,18 @@
 
 /* SVG home page */
 
-
+svg {
+    pointer-events: none;
+    position: absolute;
+   
+  }
 svg>.rooms> .bedroom{
     width: 400px;
     height: auto;
     x: 100px;
     y: 100;
     cursor: pointer;
+    pointer-events: painted;
 }
 svg > .rooms> .kitchen{
     width: 250px;
@@ -19,6 +24,8 @@ svg > .rooms> .kitchen{
 }
 svg > .rooms> .bathroom{
     width: 300px;
+    cursor: pointer;
+
     height: auto;
     x: 1500px;
     y: 50;
@@ -91,6 +98,8 @@ svg > .rooms>.livingroom{
     transform-origin:50% 50%;
     transform-box: fill-box; 
     animation: swall 1s infinite ease-in-out ;
+    cursor: pointer;
+    pointer-events: painted;
 
 }
 .gotobathroom{
@@ -117,6 +126,8 @@ svg > .rooms>.livingroom{
     stroke: palevioletred;
     stroke-width: 2;
     cursor: pointer;
+    pointer-events: painted;
+
     
 }
 

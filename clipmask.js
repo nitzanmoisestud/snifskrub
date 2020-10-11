@@ -2,7 +2,6 @@
 
 // init
 
-// const picture = document.getElementById("domBgImage");
 const picture = document.querySelector("#bgImage");
 
 console.log(picture);
@@ -17,7 +16,7 @@ const maskRing = document.getElementById("mask-ring");
 
 const width = 256;
 const highet = 160;
-const glassRadius = 5;
+const glassRadius = 10;
 
 // key down
 
@@ -34,6 +33,7 @@ function startScratch(){
   
     console.log(window.innerWidth);
     document.querySelector("svg").setAttribute("viewBox", `0 0 ${width} ${highet}`);
+
 console.log(document.querySelector("svg"));
     // Setting up sizes and positions
     maskRing.setAttribute("cx", width/2)
@@ -118,10 +118,16 @@ function mouseUp(){
 function moveGlass(posX,posY){
     ring.setAttribute("cx", posX);
     ring.setAttribute("cy", posY);
-
+    
     maskRing.setAttribute("cx", posX);
     maskRing.setAttribute("cy", posY);
+    
+    const icons = document.querySelectorAll('.cls-1')
+    icons.forEach(icon =>{
+        console.log(icon);
+        // console.log(icon.getAttribute("d"));
+    })
 
-  
+  console.log(posX, posY);
 
 }
