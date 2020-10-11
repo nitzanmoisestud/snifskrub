@@ -110,3 +110,6 @@ svg > .rooms > .livingroom {
 #elements {
   pointer-events: painted;
 }
+#mask-ring{
+    cursor: pointer;
+}
