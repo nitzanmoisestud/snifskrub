@@ -1,5 +1,5 @@
 "use strict";
-
+console.log('fuck');
 window.addEventListener("load", start);
 // Points arrays
 let elArray = [];
@@ -36,7 +36,8 @@ function start() {
 
 function openRoom(event) {
   let dataRoom = event.currentTarget.dataset.room;
-
+  const bridgeContainer = document.querySelector("#bridgeContainer");
+  bridgeContainer.style.display = 'block'
   setRooms(event);
   fox.classList.add(`goto${dataRoom}`);
   console.log(dataRoom);
@@ -84,13 +85,6 @@ function startTheSvgClick() {
   }
 }
 
-function renderToSvgBox() {
-  let use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-  use.setAttribute("href", "#domElements");
-  const elements = document.querySelector("#thesvg");
-  elements.appendChild(use);
-  console.log(use);
-}
 
 // Navigation
 
@@ -142,6 +136,11 @@ function changeRoom(event) {
 
 function exitRoom(event) {
   document.querySelector("svg").setAttribute("viewBox", `0 0 1920 1080`);
+  const svgArtboard = document.querySelector(".artboard");
+  const bridgeContainer = document.querySelector("#bridgeContainer");
+  bridgeContainer.style.display = 'none'
+
+  svgArtboard.style.display = 'block'
 
   // img.style.display = "none";
   rooms.forEach((room) => {
@@ -155,6 +154,7 @@ img.onload = function () {
 };
 
 function renderBg(room) {
+  console.log(room,'in renderbg');
   img.src = `scrub-assets/${room}.png`;
 }
 img.src;
@@ -183,11 +183,14 @@ function startTheSvgClick() {
 
 function renderToSvgBox() {
   let use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-  use.setAttribute("href", "#domElements");
-  const elements = document.querySelector("#thesvg");
-  elements.appendChild(use);
-  console.log(use);
+  use.setAttribute("href", "#thesvg");
+  const canvasInSvg = document.querySelector("#skrubCanvas");
+  canvasInSvg.appendChild(use);
+  const svgArtboard = document.querySelector(".artboard");
+  svgArtboard.style.display = 'none'
+
 }
+
 
 // img.filename = "/scrub-assets/foreground.png";
 

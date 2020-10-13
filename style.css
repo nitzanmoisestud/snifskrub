@@ -148,6 +148,7 @@ i{
 header > nav{
 display: flex;
 position: absolute;
+z-index: 100;
 width: 92%;
 top: 40px;
 justify-content: flex-end;

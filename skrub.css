@@ -5,6 +5,7 @@ body {
 #bridgeContainer {
   width: 90vw;
   position: relative;
+  display: none;
   text-align: center;
   font-family: Avenir, sans-serif;
   cursor: crosshair;
