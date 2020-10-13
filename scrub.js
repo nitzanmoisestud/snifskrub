@@ -86,7 +86,7 @@ async function loadElementsSvg(room) {
   startTheSvgClick();
 }
 function startTheSvgClick() {
-  const theFillRed = document.querySelector("#icons");
+  const theFillRed = document.querySelector("#waters");
   theFillRed.childNodes.forEach((e) => {
     e.addEventListener("click", theFill);
   });

@@ -71,9 +71,3 @@ function renderToSvgBox() {
   elements.appendChild(use);
   console.log(use);
 }
-
-  
-
-  
-
-
