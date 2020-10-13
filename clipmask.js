@@ -1,21 +1,12 @@
 "use strict";
 
-// init
 
-const picture = document.querySelector("#bgImage");
-
-console.log(picture);
-const energyElements = document.getElementById("elements");
-console.log(energyElements);
-
-const ring = document.getElementById("ring");
-const maskRing = document.getElementById("mask-ring");
 
 // init sizes
 
 const width = 256;
 const highet = 160;
-const glassRadius = 10;
+const glassRadius = 15;
 
 // key down
 
@@ -29,7 +20,6 @@ let keyD = false;
 
 
 function startScratch() {
-  console.log("start");
 
 
   document
@@ -63,7 +53,6 @@ function startScratch() {
 }
 
 function touchStart() {
-  console.log("in touch");
   ring.parentElement.removeEventListener("touchstart", touchStart);
   ring.parentElement.addEventListener("touchmove", handleTouchMove, false);
 }

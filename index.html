@@ -3,37 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
+    <header><nav><div class="arrows">
+        <i class="fas prev-arrow fa-arrow-alt-circle-left"></i>
+         <i class="fas next-arrow  fa-arrow-alt-circle-right"></i>
+
+    </div> 
+    <div class="home"><i class="fas fa-home"></i>
+        
+    </div>
+    <div class="exit"><i class="fas fa-times"></i>
+    </div>
+
+    </nav></header>
     <!-- viewBox="0 0 1920 1080" -->
-    <svg  xmlns="http://www.w3.org/2000/svg"     
+    <svg class="artboard" xmlns="http://www.w3.org/2000/svg"     
     >
         <g class="rooms">
 
-            <image  class="room-icon bedroom" data-room="bedroom" href="assets/bed.svg" />
-            <image class="room-icon bathroom" data-room="bathroom" href="assets/PeterM-Toilet-paper-roll-revisited.svg" />
-            <image   class="room-icon kitchen" data-room="kitchen" href="assets/1515133637.svg" />
-            <image  class="room-icon livingroom" data-room="livingroom" href="assets/publicdomainq-tv.svg" />
+            <image  class="room-icon bedroom" data-index='0' data-room="bedroom" href="assets/bed.svg" />
+            <image class="room-icon bathroom" data-index='1'  data-room="bathroom" href="assets/toilet.svg" />
+            <image   class="room-icon kitchen" data-index='2'  data-room="kitchen" href="assets/fridge.svg" />
+            <image  class="room-icon livingroom" data-index='3'  data-room="livingroom" href="assets/tv.svg" />
 
     <!-- Snif -->
-            <image href="assets/Snif-logo-01.svg" class="snif" alt="snif">
+            <image href="assets/Snif-logo.svg" class="snif" alt="snif">
         </g>
         <defs>
             <clipPath id="looking-glass">
                 <circle id="mask-ring" />
             </clipPath>
         </defs>
-        <image id="bgImage" href="" ></image>
+        <filter id="my-filter">
+            <feComponentTransfer>
+              <feFuncR type="linear" slope="0.8" />
+              <feFuncG type="linear" slope="0.8" />
+              <feFuncB type="linear" slope="0.8" />
+            </feComponentTransfer>
+          </filter>
+          <filter id="clip-filter">
+            <feComponentTransfer>
+              <feFuncR type="linear" slope="1.5" />
+              <feFuncG type="linear" slope="1.5" />
+              <feFuncB type="linear" slope="1.5" />
+            </feComponentTransfer>
+          </filter>
+        <image filter="url(#my-filter)" id="bgImage" href="" ></image>
+        
+        <image filter="url(#clip-filter)" clip-path="url(#looking-glass)" id="bgImage" href="" ></image>
         <g id="elements" clip-path="url(#looking-glass)"></g>
         
         
-        <circle id="ring" stroske="red" fill="transparent" stroke-width="2"/>
+        <circle filter="url(#clip-filter)" id="ring" stroske="red" fill="transparent" stroke-width="2"/>
         
     </svg>
     <div id="domElements"></div>
-        
+
+  
     <script src="main.js"></script>
     <script src="clipmask.js"></script>
 </body>
