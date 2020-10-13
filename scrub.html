@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scratch</title>
+    <link rel="stylesheet" href="scrub.css" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <svg  xmlns="http://www.w3.org/2000/svg"     
+    >
+        <g class="rooms">
+
+            <image  class="room-icon bedroom" data-room="bedroom" href="assets/bed.svg" />
+            <image class="room-icon bathroom" data-room="bathroom" href="assets/PeterM-Toilet-paper-roll-revisited.svg" />
+            <image   class="room-icon kitchen" data-room="kitchen" href="assets/1515133637.svg" />
+            <image  class="room-icon livingroom" data-room="livingroom" href="assets/publicdomainq-tv.svg" />
+
+    <!-- Snif -->
+            <image href="assets/Snif-logo-01.svg" class="snif" alt="snif">
+        </g>
+    
+        <!-- <image id="bgImage" href="" ></image>
+        <g id="elements" ></g> -->
+        
+        
+    </svg>
+    
+
+    <figure id="bridge Container">
+      <canvas id="bridge"  class="bgImage" width="1920" height="1080"> </canvas>
+      <div id="thesvg"></div>
+
+      <figcaption>mouse move or touch on photo to reveal</figcaption>
+    </figure>
+    
+    <div id="domElements"></div>
+  
+    <script src="scrub.js"></script>
+   
+  </body>
+</html>

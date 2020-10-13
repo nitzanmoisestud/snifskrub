@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+}
+
+#bridgeContainer {
+  width: 90vw;
+  position: relative;
+  text-align: center;
+  font-family: Avenir, sans-serif;
+  cursor: crosshair;
+  cursor: url("scrub-assets/paw-tail-1.png") 10 10, crosshair;
+}
+
+#bridge {
+  display: block;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#bridgeContainer figcaption {
+  margin-top: 2rem;
+}
