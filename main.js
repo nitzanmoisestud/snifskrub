@@ -61,7 +61,7 @@ function openRoom(event) {
 
 function renderBg(room) {
 
-  background.setAttribute("href", `assets/rooms/${room}.svg`);
+  background.setAttribute("href", `assets/rooms/${room}.png`);
   background.style.display = 'block';
   ring.style.display = 'block';
 
