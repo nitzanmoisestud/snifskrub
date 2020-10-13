@@ -23,3 +23,19 @@ body {
 #bridgeContainer figcaption {
   margin-top: 2rem;
 }
+
+.makeMove {
+  animation: sizeScale 3s infinite;
+}
+
+@keyframes sizeScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

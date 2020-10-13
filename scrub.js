@@ -92,6 +92,7 @@ function startTheSvgClick() {
   });
   function theFill() {
     this.setAttribute("fill", "red");
+    this.classList.add("makeMove");
   }
 }
 
