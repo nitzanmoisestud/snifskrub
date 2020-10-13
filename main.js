@@ -1,6 +1,11 @@
 "use strict";
 
 window.addEventListener("load", start);
+// Points arrays
+let elArray = [];
+let heatArray = [];
+let lightArray = [];
+let waterArray = [];
 
 // Global variables
 const rooms = document.querySelectorAll(".room-icon");
@@ -46,6 +51,7 @@ function openRoom(event) {
   setTimeout(() => {
     fox.classList.add("shrink");
     renderBg(dataRoom);
+    
     startScratch();
     loadElementsSvg(dataRoom);
     rooms.forEach((room) => {
@@ -56,7 +62,6 @@ function openRoom(event) {
     });
   }, 3000);
 }
-
 
 
 function renderBg(room) {
@@ -79,18 +84,35 @@ async function loadElementsSvg(room) {
   renderToSvgBox();
   startTheSvgClick();
 }
+// Collecting points by clicking
 function startTheSvgClick() {
-  const setStrokeBlack = document.querySelectorAll("path");
-  setStrokeBlack.forEach((e) => {
-    e.addEventListener("click", theStroke);
-  });
+  const shape = document.querySelector("#icons");
+shape.childNodes.forEach((each) => {
+  each.addEventListener("click", clickedShape);
+})
+function clickedShape() {
+this.classList.add("move");
+const clicked = this.getAttribute("id");
+console.log("clicked", clicked);
+moveToArray(clicked);
+}
 
-  // Click functions for elements icons 
-  // Need to add to basket
-  function theStroke() {
-    this.setAttribute("fill", "red");
+function moveToArray(id) {
+if (id === "el"){
+elArray.push(this);
+console.log("el", elArray.length);
+} else if(id === "heat"){
+heatArray.push(this);
+console.log("heat", heatArray.length);
+}else if(id === "light"){
+lightArray.push(this);
+console.log("light", lightArray.length);
+}else if(id === "water"){
+waterArray.push(this);
+console.log("water", waterArray.length);
+}
+}
 
-  }
 }
 
 function renderToSvgBox() {
