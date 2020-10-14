@@ -84,6 +84,7 @@ async function loadElementsSvg(room) {
   renderToSvgBox();
   startTheSvgClick();
 }
+
 // Collecting points by clicking
 function startTheSvgClick() {
   const shape = document.querySelector("#icons");

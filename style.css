@@ -201,3 +201,65 @@ button:hover #fox {
     transform: translateY(180%);
   }
 }
+
+header > .points {
+  height: auto;
+  width: 100vw;
+  padding-top: 20px;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.p-el,
+.p-heat,
+.p-light,
+.p-water {
+  height: 50px;
+  width: 47px;
+  position: relative;
+  display: inline-flex;
+  background-repeat: no-repeat;
+  margin: 0 2px;
+}
+.p-el {
+  background-image: url("assets/points/icons-11.svg");
+}
+.p-heat {
+  background-image: url("assets/points/icons-12.svg");
+}
+.p-light {
+  background-image: url("assets/points/icons-13.svg");
+}
+.p-water {
+  background-image: url("assets/points/icons-14.svg");
+}
+.e-circle,
+.h-circle,
+.l-circle,
+.w-circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  right: 0;
+  background-color: red;
+}
+p {
+  color: white;
+  margin: 0;
+  font-size: 10px;
+  text-align: center;
+  padding: 3px 0;
+}
+
+.hidden {
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.hide {
+  display: none;
+}
