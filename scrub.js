@@ -129,9 +129,11 @@ function changeRoom(event) {
   let dataRoom = event.currentTarget.dataset.room;
   const fox = document.querySelector(".snif");
 
+  
   renderBg(dataRoom);
 
   loadElementsSvg(dataRoom);
+  
 }
 
 function exitRoom(event) {
@@ -141,16 +143,18 @@ function exitRoom(event) {
   bridgeContainer.style.display = 'none'
 
   svgArtboard.style.display = 'block'
-
+  window.location.reload();
   // img.style.display = "none";
   rooms.forEach((room) => {
     room.style.display = "block";
     // ring.style.display = "none";
+    
   });
 }
 
 img.onload = function () {
   bridgeCanvas.drawImage(img, 0, 0, bridge.width, bridge.height);
+  
 };
 
 function renderBg(room) {
