@@ -211,6 +211,7 @@ header > .points {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  z-index: 100;
 }
 
 .p-el,
@@ -258,6 +259,7 @@ p {
 .hidden {
   opacity: 0;
   transition: visibility 0s 2s, opacity 2s linear;
+  visibility: hidden;
 }
 
 .hide {

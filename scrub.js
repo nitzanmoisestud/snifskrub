@@ -1,7 +1,3 @@
-
-// scrub function inspired from :
-// url: 
-// https://codemyui.com/html5-canvas-scratch-off-reveal-image-animation/
 "use strict";
 console.log('fuck');
 window.addEventListener("load", start);
@@ -22,8 +18,8 @@ var bridge = document.querySelector("#bridge"),
   brushRadius = (bridge.width / 100) * 5,
   img = new Image();
 
-if (brushRadius > 10) {
-  brushRadius = 20;
+if (brushRadius > 100) {
+  brushRadius = 100;
 }
 
 //start function to choose the rooms from index.html
@@ -59,35 +55,7 @@ function openRoom(event) {
   }, 3000);
 }
 
-// Collecting points by clicking
-function startTheSvgClick() {
-  const shape = document.querySelector("#icons");
-  shape.childNodes.forEach((each) => {
-    each.addEventListener("click", clickedShape);
-  });
-  function clickedShape() {
-    this.classList.add("move");
-    const clicked = this.getAttribute("id");
-    console.log("clicked", clicked);
-    moveToArray(clicked);
-  }
 
-  function moveToArray(id) {
-    if (id === "el") {
-      elArray.push(this);
-      console.log("el", elArray.length);
-    } else if (id === "heat") {
-      heatArray.push(this);
-      console.log("heat", heatArray.length);
-    } else if (id === "light") {
-      lightArray.push(this);
-      console.log("light", lightArray.length);
-    } else if (id === "water") {
-      waterArray.push(this);
-      console.log("water", waterArray.length);
-    }
-  }
-}
 
 
 // Navigation
@@ -133,11 +101,9 @@ function changeRoom(event) {
   let dataRoom = event.currentTarget.dataset.room;
   const fox = document.querySelector(".snif");
 
-  
   renderBg(dataRoom);
 
   loadElementsSvg(dataRoom);
-  
 }
 
 function exitRoom(event) {
@@ -147,7 +113,7 @@ function exitRoom(event) {
   bridgeContainer.style.display = 'none'
 
   svgArtboard.style.display = 'block'
-  window.location.reload();
+  window.location.reload(true);
   // img.style.display = "none";
   rooms.forEach((room) => {
     room.style.display = "block";
@@ -158,7 +124,6 @@ function exitRoom(event) {
 
 img.onload = function () {
   bridgeCanvas.drawImage(img, 0, 0, bridge.width, bridge.height);
-  
 };
 
 function renderBg(room) {
@@ -178,15 +143,46 @@ async function loadElementsSvg(room) {
   renderToSvgBox();
   startTheSvgClick();
 }
+
+// Collecting points by clicking
 function startTheSvgClick() {
-  const theFillRed = document.querySelector("#icons");
-  theFillRed.childNodes.forEach((e) => {
-    e.addEventListener("click", theFill);
-  });
-  function theFill() {
-    this.setAttribute("fill", "red");
-    this.classList.add("makeMove");
-  }
+  const shape = document.querySelector("#icons");
+shape.childNodes.forEach((each) => {
+  each.addEventListener("click", clickedShape);
+})
+function clickedShape() {
+this.classList.add("hidden");
+const clicked = this.getAttribute("id");
+console.log("clicked", clicked);
+moveToArray(clicked);
+}
+
+function moveToArray(id) {
+if (id === "el"){
+elArray.push(this);
+console.log("el", elArray.length);
+document.querySelector("#e-points").textContent = elArray.length;
+document.querySelector(".e-circle").classList.remove("hide");
+
+
+} else if(id === "heat"){
+heatArray.push(this);
+console.log("heat", heatArray.length);
+document.querySelector("#h-points").textContent = heatArray.length;
+document.querySelector(".h-circle").classList.remove("hide");
+}else if(id === "light"){
+lightArray.push(this);
+console.log("light", lightArray.length);
+document.querySelector("#l-points").textContent = lightArray.length;
+document.querySelector(".l-circle").classList.remove("hide");
+}else if(id === "water"){
+waterArray.push(this);
+console.log("water", waterArray.length);
+document.querySelector("#w-points").textContent = waterArray.length;
+document.querySelector(".w-circle").classList.remove("hide");
+}
+}
+
 }
 
 function renderToSvgBox() {
