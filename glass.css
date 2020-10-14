@@ -1,0 +1,202 @@
+/* SVG home page */
+body {
+  margin: 0%;
+  overflow-x: hidden;
+  background: blanchedalmond;
+}
+
+svg > .rooms > .bedroom {
+  width: 400px;
+  height: auto;
+  x: 100px;
+  y: 100;
+  cursor: pointer;
+}
+svg > .rooms > .kitchen {
+  width: 250px;
+  height: auto;
+  x: 200px;
+  y: 450;
+  cursor: pointer;
+}
+
+svg > .rooms > .bathroom {
+  width: 300px;
+  height: auto;
+  x: 1500px;
+  y: 50;
+  cursor: pointer;
+}
+svg > .rooms > .livingroom {
+  width: 300px;
+  height: auto;
+  x: 1500px;
+  y: 450;
+  cursor: pointer;
+}
+.snif {
+  width: 200px;
+  y: 380px;
+  x: 880px;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+/* Home page to room animations */
+
+@keyframes toroom {
+  0% {
+    transform: scale(1);
+    offset-rotate: 0deg;
+  }
+  50% {
+    transform: scale(1);
+    offset-distance: 100%;
+
+    offset-rotate: 0deg;
+  }
+
+  100% {
+    offset-distance: 100%;
+    offset-rotate: 0deg;
+    transform: scale(0);
+  }
+}
+
+@keyframes swall {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+.room-icon {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: swall 1s infinite ease-in-out;
+  cursor: pointer;
+  pointer-events: painted;
+}
+.room-icon {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: swall 1s infinite ease-in-out;
+}
+.gotobathroom {
+  offset-path: path("M 880 380 C 1200 80  1300 50  1680 180");
+  animation: toroom 3s linear forwards;
+}
+.gotokitchen {
+  offset-path: path("M 45 80 C  -80 300  -250 240 -330 220");
+  animation: toroom 3s linear forwards;
+}
+.gotobedroom {
+  offset-path: path("M 45 80 C -50 -60  -250 -120 -360 -50");
+  animation: toroom 3s linear forwards;
+}
+.gotolivingroom {
+  offset-path: path("M 45 100 C 80 300  250 240 490 180");
+  animation: toroom 3s linear forwards;
+}
+
+/* Clipping path */
+
+#ring {
+  stroke: palevioletred;
+  stroke-width: 4;
+  cursor: pointer;
+}
+
+#ring {
+  pointer-events: none;
+}
+#elements {
+  pointer-events: painted;
+}
+#mask-ring {
+  cursor: pointer;
+}
+
+/* Navigation */
+
+i {
+  color: #f07e31;
+
+  font-size: 1.6rem;
+  margin-left: 40px;
+  cursor: pointer;
+}
+header > nav {
+  display: flex;
+  position: absolute;
+  width: 92%;
+  top: 40px;
+  justify-content: flex-end;
+  max-width: 100%;
+  box-shadow: white 5px;
+}
+.arrows {
+  /* visibility: hidden; */
+}
+
+/* Home page */
+.levels {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  align-content: center;
+}
+.levels > .level {
+  margin-bottom: 50px;
+}
+.level > a > button {
+  background-color: white;
+  color: violet;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: pink 2px solid;
+  font-weight: 500;
+  border-radius: 50px;
+  padding: 20px 50px;
+}
+
+.level > a > button:hover {
+  animation: swall 1s both ease-in-out;
+
+  /* transform: scale(1.1); */
+}
+button:hover #fox {
+  animation: levelFox 1s both ease-in-out;
+  top: 30%;
+  display: none;
+}
+
+.snif-home {
+  position: absolute;
+  width: 100px;
+  top: 10%;
+  left: 60%;
+  height: auto;
+}
+
+@keyframes levelFox {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(150%);
+  }
+
+  100% {
+    transform: translateY(180%);
+  }
+}
