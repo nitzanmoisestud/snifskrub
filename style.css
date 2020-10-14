@@ -1,9 +1,8 @@
 /* SVG home page */
-body{
-    margin: 0%;
-    overflow-x: hidden;
-    background: blanchedalmond;
-
+body {
+  margin: 0%;
+  overflow-x: hidden;
+  background: blanchedalmond;
 }
 
 svg > .rooms > .bedroom {
@@ -12,7 +11,6 @@ svg > .rooms > .bedroom {
   x: 100px;
   y: 100;
   cursor: pointer;
-
 }
 svg > .rooms > .kitchen {
   width: 250px;
@@ -65,32 +63,24 @@ svg > .rooms > .livingroom {
   }
 }
 
+@keyframes swall {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 
-@keyframes swall{
-    0%{
-        transform: scale(1);
-        
-        
-    }
-    50%{
-        transform: scale(1.05);
- 
-    }
-    
-    100%{
-        transform: scale(1);
-        
-        
-        
-    }
+  100% {
+    transform: scale(1);
+  }
 }
-.room-icon{
-    transform-origin:50% 50%;
-    transform-box: fill-box; 
-    animation: swall 1s infinite ease-in-out ;
-    cursor: pointer;
-    pointer-events: painted;
-
+.room-icon {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: swall 1s infinite ease-in-out;
+  cursor: pointer;
+  pointer-events: painted;
 }
 .room-icon {
   transform-origin: 50% 50%;
@@ -102,26 +92,24 @@ svg > .rooms > .livingroom {
   animation: toroom 3s linear forwards;
 }
 .gotokitchen {
-  offset-path: path("M 45 80 C  -80 300  -250 240 -330 220");
+  offset-path: path("M 880 380 C 800 160  200 50  350 580");
   animation: toroom 3s linear forwards;
 }
 .gotobedroom {
-  offset-path: path("M 45 80 C -50 -60  -250 -120 -360 -50");
+  offset-path: path("M 880 380 C 1000 160  100 50  300 200");
   animation: toroom 3s linear forwards;
 }
 .gotolivingroom {
-  offset-path: path("M 45 100 C 80 300  250 240 490 180");
+  offset-path: path("M 880 380 C 1200 160  1300 50  1680 580");
   animation: toroom 3s linear forwards;
 }
 
 /* Clipping path */
 
-
 #ring {
   stroke: palevioletred;
   stroke-width: 4;
   cursor: pointer;
-
 }
 
 #ring {
@@ -130,98 +118,86 @@ svg > .rooms > .livingroom {
 #elements {
   pointer-events: painted;
 }
-#mask-ring{
-    cursor: pointer;
+#mask-ring {
+  cursor: pointer;
 }
-
 
 /* Navigation */
 
-i{
-    color: #f07e31;
-    
-    font-size: 1.6rem;
-    margin-left: 40px;
-    cursor: pointer;
+i {
+  color: #f07e31;
 
+  font-size: 1.6rem;
+  margin-left: 40px;
+  cursor: pointer;
 }
-header > nav{
-display: flex;
-position: absolute;
-z-index: 100;
-width: 92%;
-top: 40px;
-justify-content: flex-end;
-max-width: 100%;
-box-shadow: white 5px;
+header > nav {
+  display: flex;
+  position: absolute;
+  z-index: 100;
+  width: 92%;
+  top: 40px;
+  justify-content: flex-end;
+  max-width: 100%;
+  box-shadow: white 5px;
 }
-.arrows{
-    /* visibility: hidden; */
+.arrows {
+  /* visibility: hidden; */
 }
 
 /* Home page */
-.levels{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    align-content: center;
+.levels {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  align-content: center;
 }
-.levels > .level{
-    margin-bottom: 50px
+.levels > .level {
+  margin-bottom: 50px;
 }
-.level> a>button{
-    background-color: white;
-    color: violet;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: pink 2px solid;
-    font-weight: 500;
-    border-radius: 50px;
-    padding: 20px 50px ;
-    
+.level > a > button {
+  background-color: white;
+  color: violet;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: pink 2px solid;
+  font-weight: 500;
+  border-radius: 50px;
+  padding: 20px 50px;
 }
 
-.level>a>button:hover {
-    animation: swall 1s both ease-in-out;
+.level > a > button:hover {
+  animation: swall 1s both ease-in-out;
 
-    /* transform: scale(1.1); */
-    
+  /* transform: scale(1.1); */
 }
 button:hover #fox {
-    animation: levelFox 1s both ease-in-out;
-top: 30%;
-display: none;
-    
+  animation: levelFox 1s both ease-in-out;
+  top: 30%;
+  display: none;
 }
 
-
-.snif-home{
-    position: absolute;
-    width: 100px;
-    top: 10%;
-    left: 60%;
-    height: auto;
+.snif-home {
+  position: absolute;
+  width: 100px;
+  top: 10%;
+  left: 60%;
+  height: auto;
 }
 
-@keyframes levelFox{
-    0%{
-        transform: translateY(100%);
-        
-        
-    }
-    50%{
-        transform: translateY(150%);
- 
-    }
-    
-    100%{
-        transform: translateY(180%);
-        
-        
-        
-    }
+@keyframes levelFox {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(150%);
+  }
+
+  100% {
+    transform: translateY(180%);
+  }
 }
