@@ -1,3 +1,7 @@
+
+// scrub function inspired from :
+// url: 
+// https://codemyui.com/html5-canvas-scratch-off-reveal-image-animation/
 "use strict";
 console.log('fuck');
 window.addEventListener("load", start);
@@ -18,8 +22,8 @@ var bridge = document.querySelector("#bridge"),
   brushRadius = (bridge.width / 100) * 5,
   img = new Image();
 
-if (brushRadius > 100) {
-  brushRadius = 100;
+if (brushRadius > 10) {
+  brushRadius = 20;
 }
 
 //start function to choose the rooms from index.html

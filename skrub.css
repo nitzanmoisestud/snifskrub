@@ -28,6 +28,9 @@ body {
 .makeMove {
   animation: sizeScale 3s infinite;
 }
+#icons {
+  cursor: pointer;
+}
 
 @keyframes sizeScale {
   0% {
