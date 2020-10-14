@@ -91,7 +91,7 @@ shape.childNodes.forEach((each) => {
   each.addEventListener("click", clickedShape);
 })
 function clickedShape() {
-this.classList.add("move");
+this.classList.add("hidden");
 const clicked = this.getAttribute("id");
 console.log("clicked", clicked);
 moveToArray(clicked);
@@ -101,15 +101,23 @@ function moveToArray(id) {
 if (id === "el"){
 elArray.push(this);
 console.log("el", elArray.length);
+document.querySelector("#e-points").textContent = elArray.length;
+document.querySelector(".e-circle").classList.remove("hide");
 } else if(id === "heat"){
 heatArray.push(this);
 console.log("heat", heatArray.length);
+document.querySelector("#h-points").textContent = heatArray.length;
+document.querySelector(".h-circle").classList.remove("hide");
 }else if(id === "light"){
 lightArray.push(this);
 console.log("light", lightArray.length);
+document.querySelector("#l-points").textContent = lightArray.length;
+document.querySelector(".l-circle").classList.remove("hide");
 }else if(id === "water"){
 waterArray.push(this);
 console.log("water", waterArray.length);
+document.querySelector("#w-points").textContent = waterArray.length;
+document.querySelector(".w-circle").classList.remove("hide");
 }
 }
 
