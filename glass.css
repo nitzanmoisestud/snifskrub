@@ -110,12 +110,11 @@ svg > .rooms > .livingroom {
   stroke: palevioletred;
   stroke-width: 4;
   cursor: pointer;
-}
-
-#ring {
   pointer-events: none;
 }
+
 #elements {
+  cursor: pointer;
   pointer-events: painted;
 }
 #mask-ring {

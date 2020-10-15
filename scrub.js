@@ -23,6 +23,35 @@ if (brushRadius > 100) {
 }
 
 //start function to choose the rooms from index.html
+
+
+
+
+function imagesLoad(){
+  console.log("Draw image");
+ bridgeCanvas.drawImage(img, 0, 0, bridge.width, bridge.height);
+  img.onload = null;   
+}
+ 
+
+// img.onload = function () {
+//   bridgeCanvas.drawImage(img, 0, 0, bridge.width, bridge.height);
+// };
+//img.src;
+
+
+function renderBg(room) {
+  console.log(room,'in renderbg');
+  // img.onload = imagesLoad;
+  img.src = `scrub-assets/${room}.png`;
+  img.onload = imagesLoad;
+  
+}
+
+
+
+
+
 function start() {
   console.log("start");
   document.querySelector("svg").setAttribute("viewBox", `0 0 1920 1080`);
@@ -32,6 +61,7 @@ function start() {
   });
   const exitBtn = document.querySelector(".exit");
   exitBtn.addEventListener("click", exitRoom);
+  
 }
 
 function openRoom(event) {
@@ -39,6 +69,10 @@ function openRoom(event) {
   const bridgeContainer = document.querySelector("#bridgeContainer");
   bridgeContainer.style.display = 'block'
   setRooms(event);
+ 
+ 
+  
+  
   fox.classList.add(`goto${dataRoom}`);
   console.log(dataRoom);
   setTimeout(() => {
@@ -65,13 +99,13 @@ function setRooms(event) {
   let roomIndex = event.target.dataset.index;
 
   const prevArrow = document.querySelector(".prev-arrow");
-  prevArrow.dataset.index = roomIndex;
-  prevArrow.addEventListener("click", prevRoom);
-  const nextArrow = document.querySelector(".next-arrow");
+  // prevArrow.dataset.index = roomIndex;
+  // prevArrow.addEventListener("click", prevRoom);
+  // const nextArrow = document.querySelector(".next-arrow");
 
-  nextArrow.dataset.index = roomIndex;
-  console.log(nextArrow);
-  nextArrow.addEventListener("click", nextRoom);
+  // nextArrow.dataset.index = roomIndex;
+  // console.log(nextArrow);
+  // nextArrow.addEventListener("click", nextRoom);
 }
 
 function nextRoom(event) {
@@ -114,6 +148,9 @@ function exitRoom(event) {
 
   svgArtboard.style.display = 'block'
   window.location.reload(true);
+
+  localStorage.getItem('points');
+  img.onload = imagesLoad;
   // img.style.display = "none";
   rooms.forEach((room) => {
     room.style.display = "block";
@@ -122,15 +159,7 @@ function exitRoom(event) {
   });
 }
 
-img.onload = function () {
-  bridgeCanvas.drawImage(img, 0, 0, bridge.width, bridge.height);
-};
 
-function renderBg(room) {
-  console.log(room,'in renderbg');
-  img.src = `scrub-assets/${room}.png`;
-}
-img.src;
 
 async function loadElementsSvg(room) {
   let res = await fetch(`scrub-assets/${room}.svg`);
@@ -163,27 +192,67 @@ elArray.push(this);
 console.log("el", elArray.length);
 document.querySelector("#e-points").textContent = elArray.length;
 document.querySelector(".e-circle").classList.remove("hide");
-
-
+if(elArray.length == 3){
+  
+  showAnimation();
+  
+}
 } else if(id === "heat"){
 heatArray.push(this);
 console.log("heat", heatArray.length);
 document.querySelector("#h-points").textContent = heatArray.length;
 document.querySelector(".h-circle").classList.remove("hide");
+if(heatArray.length == 3){
+  
+  showAnimation();
+  
+}
 }else if(id === "light"){
 lightArray.push(this);
 console.log("light", lightArray.length);
 document.querySelector("#l-points").textContent = lightArray.length;
 document.querySelector(".l-circle").classList.remove("hide");
-}else if(id === "water"){
+if(lightArray.length == 3){
+  
+  showAnimation();
+  
+}
+}
+else if(id === "water"){
 waterArray.push(this);
 console.log("water", waterArray.length);
+
 document.querySelector("#w-points").textContent = waterArray.length;
 document.querySelector(".w-circle").classList.remove("hide");
+if(waterArray.length == 3){
+  
+  showAnimation();
+  
+}
 }
 }
 
+
+const thePopUp = document.querySelector("#theanimation");
+const btn = document.querySelector("#btn");
+function showAnimation(){
+  
+  thePopUp.style.display = "block";
+  btn.style.display ="block";
+  thePopUp.classList.add("makeMove");
+  btn.classList.add("makeMove");
 }
+
+  
+  btn.addEventListener("click", function(){
+    thePopUp.style.display = "none";
+    btn.style.display = "none";
+  });
+
+}
+
+
+
 
 function renderToSvgBox() {
   let use = document.createElementNS("http://www.w3.org/2000/svg", "use");
@@ -220,7 +289,7 @@ function getBrushPos(xRef, yRef) {
 
 function drawDot(mouseX, mouseY) {
   bridgeCanvas.beginPath();
-  bridgeCanvas.arc(mouseX, mouseY, brushRadius, 0, 2 * Math.PI, true);
+  bridgeCanvas.arc(mouseX, mouseY, brushRadius, 0, 2 * Math.PI);
   bridgeCanvas.fillStyle = "#000";
   bridgeCanvas.globalCompositeOperation = "destination-out";
   bridgeCanvas.fill();
@@ -235,7 +304,7 @@ bridge.parentElement.addEventListener(
       drawDot(brushPos.x, brushPos.y);
     }
   },
-  false
+  
 );
 
 bridge.parentElement.addEventListener(
