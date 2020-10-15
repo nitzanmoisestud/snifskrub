@@ -100,30 +100,69 @@ moveToArray(clicked);
 }
 
 function moveToArray(id) {
-if (id === "el"){
-elArray.push(this);
-console.log("el", elArray.length);
-document.querySelector("#e-points").textContent = elArray.length;
-document.querySelector(".e-circle").classList.remove("hide");
-} else if(id === "heat"){
-heatArray.push(this);
-console.log("heat", heatArray.length);
-document.querySelector("#h-points").textContent = heatArray.length;
-document.querySelector(".h-circle").classList.remove("hide");
-}else if(id === "light"){
-lightArray.push(this);
-console.log("light", lightArray.length);
-document.querySelector("#l-points").textContent = lightArray.length;
-document.querySelector(".l-circle").classList.remove("hide");
-}else if(id === "water"){
-waterArray.push(this);
-console.log("water", waterArray.length);
-document.querySelector("#w-points").textContent = waterArray.length;
-document.querySelector(".w-circle").classList.remove("hide");
-}
-}
-
-}
+  if (id === "el"){
+  elArray.push(this);
+  console.log("el", elArray.length);
+  document.querySelector("#e-points").textContent = elArray.length;
+  document.querySelector(".e-circle").classList.remove("hide");
+  if(elArray.length == 10){
+    
+    showAnimation();
+    
+  }
+  } else if(id === "heat"){
+  heatArray.push(this);
+  console.log("heat", heatArray.length);
+  document.querySelector("#h-points").textContent = heatArray.length;
+  document.querySelector(".h-circle").classList.remove("hide");
+  if(heatArray.length == 10){
+    
+    showAnimation();
+    
+  }
+  }else if(id === "light"){
+  lightArray.push(this);
+  console.log("light", lightArray.length);
+  document.querySelector("#l-points").textContent = lightArray.length;
+  document.querySelector(".l-circle").classList.remove("hide");
+  if(lightArray.length == 10){
+    
+    showAnimation();
+    
+  }
+  }
+  else if(id === "water"){
+  waterArray.push(this);
+  console.log("water", waterArray.length);
+  
+  document.querySelector("#w-points").textContent = waterArray.length;
+  document.querySelector(".w-circle").classList.remove("hide");
+  if(waterArray.length == 10){
+    
+    showAnimation();
+    
+  }
+  }
+  }
+  
+  
+  const thePopUp = document.querySelector("#theanimation");
+  const btn = document.querySelector("#btn");
+  function showAnimation(){
+    
+    thePopUp.style.display = "block";
+    btn.style.display ="block";
+    thePopUp.classList.add("makeMove");
+    btn.classList.add("makeMove");
+  }
+  
+    
+    btn.addEventListener("click", function(){
+      thePopUp.style.display = "none";
+      btn.style.display = "none";
+    });
+  
+  }
 
 function renderToSvgBox() {
   let use = document.createElementNS("http://www.w3.org/2000/svg", "use");
