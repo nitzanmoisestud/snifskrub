@@ -6,7 +6,8 @@ let elArray = [];
 let heatArray = [];
 let lightArray = [];
 let waterArray = [];
-
+// sound for points
+const pointSound = document.getElementById("point-sound");
 // Global variables
 const rooms = document.querySelectorAll(".room-icon");
 // const levels = document.querySelectorAll(".level");
@@ -96,6 +97,7 @@ this.removeEventListener("click", clickedShape);
 this.classList.add("hidden");
 const clicked = this.getAttribute("id");
 console.log("clicked", clicked);
+pointSound.play();
 moveToArray(clicked);
 }
 
