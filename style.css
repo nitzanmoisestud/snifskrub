@@ -146,7 +146,6 @@ header > nav {
 }
 
 /* Home page */
-
 #homepage {
   z-index: 2;
 }
@@ -187,7 +186,7 @@ button:hover #fox {
   top: 30%;
   display: none;
 }
-.home {
+.homepage {
   position: absolute;
 }
 #snif-home {
