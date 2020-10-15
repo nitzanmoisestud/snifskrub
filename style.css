@@ -6,32 +6,32 @@ body {
 }
 
 svg > .rooms > .bedroom {
-  width: 400px;
+  width: 24vw;
   height: auto;
-  x: 100px;
-  y: 100;
+  x: 10%;
+  y: 12%;
   cursor: pointer;
 }
 svg > .rooms > .kitchen {
-  width: 250px;
+  width: 24vw;
   height: auto;
-  x: 200px;
-  y: 450;
+  x: 10%;
+  y: 55%;
   cursor: pointer;
 }
 
 svg > .rooms > .bathroom {
-  width: 300px;
-  height: auto;
-  x: 1500px;
-  y: 50;
+  width: auto;
+  height: 30vh;
+  x: 70%;
+  y: 18%;
   cursor: pointer;
 }
 svg > .rooms > .livingroom {
-  width: 300px;
+  width: 24vw;
   height: auto;
-  x: 1500px;
-  y: 450;
+  x: 70%;
+  y: 55%;
   cursor: pointer;
 }
 .snif {
@@ -205,25 +205,25 @@ button:hover #fox {
   width: 35vw;
   top: 50%;
   left: -5%;
-  animation: bloob 5s infinite 4s ease-in-out;
+  animation: bloob 5s infinite ease-in-out;
 }
 #heat-home {
   width: 25vw;
   top: 60%;
   left: 25%;
-  animation: bloob 4s infinite 3s ease-in-out;
+  animation: bloob 4s infinite -3s ease-in-out;
 }
 #light-home {
   width: 40vw;
   top: 50%;
   left: 47%;
-  animation: bloob 5s infinite 2s ease-in-out;
+  animation: bloob 5s infinite -2s ease-in-out;
 }
 #water-home {
   width: 20vw;
   top: 65%;
   left: 82%;
-  animation: bloob 4s infinite 1s ease-in-out;
+  animation: bloob 4s infinite -1s ease-in-out;
 }
 @keyframes bloob {
   0% {
