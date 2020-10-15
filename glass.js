@@ -92,6 +92,7 @@ shape.childNodes.forEach((each) => {
   each.addEventListener("click", clickedShape);
 })
 function clickedShape() {
+this.removeEventListener("click", clickedShape);
 this.classList.add("hidden");
 const clicked = this.getAttribute("id");
 console.log("clicked", clicked);
