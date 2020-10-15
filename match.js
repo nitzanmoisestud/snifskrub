@@ -6,7 +6,8 @@ let elArray = [];
 let heatArray = [];
 let lightArray = [];
 let waterArray = [];
-
+// sound for points
+const pointSound = document.getElementById("point-sound");
 // Global variables
 const rooms = document.querySelectorAll(".room-icon");
 // const levels = document.querySelectorAll(".level");
@@ -155,6 +156,7 @@ function startTheElementsDrag() {
       if (this.hitTest(lightsFurnitures[i]) ) {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
         // Adding to points arrays
+        pointSound.play();
         moveToArray(this.target.id)
       }
     }
@@ -166,6 +168,7 @@ function startTheElementsDrag() {
       
       if (this.hitTest(waterFurnitures[i]) ) {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
+        pointSound.play();
         moveToArray(this.target.id)
 
       }
@@ -178,6 +181,7 @@ function startTheElementsDrag() {
       
       if (this.hitTest(elFurnitures[i]) ) {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
+        pointSound.play();
         moveToArray(this.target.id)
 
       }
@@ -190,6 +194,7 @@ function startTheElementsDrag() {
       
       if (this.hitTest(heatFurnitures[i]) ) {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
+        pointSound.play();
         moveToArray(this.target.id)
 
       }
