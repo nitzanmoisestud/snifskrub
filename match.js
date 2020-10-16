@@ -140,22 +140,25 @@ function startTheElementsDrag() {
 // https://greensock.com/svg-drag/
 
   function dragElements(icon){
+    const overlapThreshold = "100%"; 
+
       icon.classList.add('drag');
    console.log(icon.id);
-    Draggable.create(".drag", {
+Draggable.create(".drag", {
         bounds:"svg",
         onDrag: function() {
   if (this.target.id === 'light') {
     
     const lightsFurnitures = document.querySelectorAll('.light')
     let i = lightsFurnitures.length;
-    
     while (--i >-1) {
-      
       if (this.hitTest(lightsFurnitures[i]) ) {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
         // Adding to points arrays
+
+        console.log(this);
         moveToArray(this.target.id)
+        this.endDrag()
       }
     }
   }else if(this.target.id === 'water'){
@@ -167,6 +170,7 @@ function startTheElementsDrag() {
       if (this.hitTest(waterFurnitures[i]) ) {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
         moveToArray(this.target.id)
+        this.endDrag()
 
       }
     }
@@ -179,6 +183,7 @@ function startTheElementsDrag() {
       if (this.hitTest(elFurnitures[i]) ) {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
         moveToArray(this.target.id)
+        this.endDrag()
 
       }
     }
@@ -191,11 +196,13 @@ function startTheElementsDrag() {
       if (this.hitTest(heatFurnitures[i]) ) {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
         moveToArray(this.target.id)
+        this.endDrag()
 
       }
     }
   }
         }
+        
       });
 
 
