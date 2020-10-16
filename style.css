@@ -88,19 +88,19 @@ svg > .rooms > .livingroom {
   animation: swall 1s infinite ease-in-out;
 }
 .gotobathroom {
-  offset-path: path("M 880 380 C 1200 80  1300 50  1680 180");
+  offset-path: path("M 880 380 C 1200 150  1300 50  1450 280");
   animation: toroom 3s linear forwards;
 }
 .gotokitchen {
-  offset-path: path("M 880 380 C 800 160  200 50  350 580");
+  offset-path: path("M 880 380 C 800 160  200 50  350 740");
   animation: toroom 3s linear forwards;
 }
 .gotobedroom {
-  offset-path: path("M 880 380 C 1000 160  100 50  300 200");
+  offset-path: path("M 880 380 C 1000 160  100 50  350 300");
   animation: toroom 3s linear forwards;
 }
 .gotolivingroom {
-  offset-path: path("M 880 380 C 1200 160  1300 50  1680 580");
+  offset-path: path("M 880 380 C 1200 160  1300 50  1450 740");
   animation: toroom 3s linear forwards;
 }
 
@@ -312,4 +312,50 @@ p {
 
 .hide {
   display: none;
+}
+
+/* rewards picture shows */
+
+.thepopup {
+  display: flex;
+  position: absolute;
+  z-index: 100;
+  width: 92%;
+  top: 20%;
+  justify-content: flex-end;
+  max-width: 100%;
+  box-shadow: white 5px;
+}
+
+#theanimation {
+  position: absolute;
+  background-image: url("");
+
+  display: none;
+  top: 30%;
+
+  left: 30%;
+  background-repeat: no-repeat;
+  width: 60vw;
+  height: 27vw;
+  background-size: auto 100%;
+}
+#closeX {
+  cursor: pointer;
+}
+
+.makeMove {
+  animation: sizeScale 3s infinite;
+}
+
+@keyframes sizeScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

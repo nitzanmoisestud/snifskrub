@@ -6,7 +6,8 @@ let elArray = [];
 let heatArray = [];
 let lightArray = [];
 let waterArray = [];
-
+// sound for points
+const pointSound = document.getElementById("point-sound");
 // Global variables
 const rooms = document.querySelectorAll(".room-icon");
 // const levels = document.querySelectorAll(".level");
@@ -156,7 +157,8 @@ Draggable.create(".drag", {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
         // Adding to points arrays
 
-        console.log(this);
+
+        pointSound.play();
         moveToArray(this.target.id)
         this.endDrag()
       }
@@ -169,6 +171,7 @@ Draggable.create(".drag", {
       
       if (this.hitTest(waterFurnitures[i]) ) {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
+        pointSound.play();
         moveToArray(this.target.id)
         this.endDrag()
 
@@ -182,6 +185,7 @@ Draggable.create(".drag", {
       
       if (this.hitTest(elFurnitures[i]) ) {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
+        pointSound.play();
         moveToArray(this.target.id)
         this.endDrag()
 
@@ -195,6 +199,7 @@ Draggable.create(".drag", {
       
       if (this.hitTest(heatFurnitures[i]) ) {
         gsap.to(this.target, {duration: 3, opacity:0, scale:0, svgOrigin:"675 143"});
+        pointSound.play();
         moveToArray(this.target.id)
         this.endDrag()
 
@@ -213,29 +218,97 @@ Draggable.create(".drag", {
 
 }
 
-  function moveToArray(id) {
-  if (id === "el"){
-  elArray.push(this);
-  console.log("el", elArray.length);
-  document.querySelector("#e-points").textContent = elArray.length;
-  document.querySelector(".e-circle").classList.remove("hide");
-  } else if(id === "heat"){
-  heatArray.push(this);
-  console.log("heat", heatArray.length);
-  document.querySelector("#h-points").textContent = heatArray.length;
-  document.querySelector(".h-circle").classList.remove("hide");
-  }else if(id === "light"){
-  lightArray.push(this);
-  console.log("light", lightArray.length);
-  document.querySelector("#l-points").textContent = lightArray.length;
-  document.querySelector(".l-circle").classList.remove("hide");
-  }else if(id === "water"){
-  waterArray.push(this);
-  console.log("water", waterArray.length);
-  document.querySelector("#w-points").textContent = waterArray.length;
-  document.querySelector(".w-circle").classList.remove("hide");
+
+
+
+function moveToArray(id) {
+if (id === "el"){
+elArray.push(this);
+console.log("el", elArray.length);
+document.querySelector("#e-points").textContent = elArray.length;
+document.querySelector(".e-circle").classList.remove("hide");
+if(elArray.length >= 40){
+  
+  showAnimation();
+  
+}
+} else if(id === "heat"){
+heatArray.push(this);
+console.log("heat", heatArray.length);
+document.querySelector("#h-points").textContent = heatArray.length;
+document.querySelector(".h-circle").classList.remove("hide");
+if(heatArray.length >= 40){
+  
+  showAnimation();
+  
+}
+}else if(id === "light"){
+lightArray.push(this);
+console.log("light", lightArray.length);
+document.querySelector("#l-points").textContent = lightArray.length;
+document.querySelector(".l-circle").classList.remove("hide");
+if(lightArray.length >= 40){
+  
+  showAnimation();
+  
+}
+}
+else if(id === "water"){
+waterArray.push(this);
+console.log("water", waterArray.length);
+
+document.querySelector("#w-points").textContent = waterArray.length;
+document.querySelector(".w-circle").classList.remove("hide");
+if(waterArray.length >= 40){
+  
+  showAnimation();
+  
+}
+}
+}
+
+async function rewardsShow() {
+  let response = await fetch("assets/tillykke-02.svg");
+  let mySvgData = await response.text();
+  document.querySelector("#theanimation").innerHTML = mySvgData;
+  startRewardsShow();
+}
+
+function startRewardsShow() {
+  let pointsNumber = document.querySelector("#tenPoints");
+  if (waterArray.length == 40){
+    pointsNumber.textContent =  waterArray.length;
+  }else if (lightArray.length == 40){
+    pointsNumber.textContent = lightArray.length;
+  }else if(elArray.length == 40){
+    pointsNumber.textContent = elArray.length;
+  }else if(heatArray.length == 40){
+    pointsNumber.textContent = heatArray.length;
   }
-  }
+  //pointsNumber.textContent =  waterArray.length || lightArray.length || heatArray.length || elArray.length;
+
+  const closeRewards = document.querySelector("#closeX");
+  closeRewards.addEventListener("click", function(){
+    thePopUp.style.display = "none";
+   
+  });
+}
+
+
+
+const thePopUp = document.querySelector("#theanimation");
+
+function showAnimation(){
+  rewardsShow() 
+  thePopUp.style.display = "block";
+  thePopUp.classList.add("makeMove");
+}
+
+
+
+
+
+
   
   
 
