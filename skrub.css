@@ -3,7 +3,9 @@ body {
 }
 
 #bridgeContainer {
-  width: 90vw;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   position: relative;
   display: none;
   text-align: center;
@@ -15,6 +17,7 @@ body {
 #bridge {
   display: block;
   margin: 0;
+  padding: 0;
   position: absolute;
   width: 100%;
   z-index: 2;
