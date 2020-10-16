@@ -329,7 +329,7 @@ p {
 
 #theanimation {
   position: absolute;
-  background-image: url("assets/tillykke-01.svg");
+  background-image: url("");
 
   display: none;
   top: 30%;
@@ -340,13 +340,7 @@ p {
   height: 27vw;
   background-size: auto 100%;
 }
-#btn {
-  display: none;
-  position: absolute;
-  left: 80%;
-  top: 30%;
-  color: white;
-  font-size: 35px;
+#closeX {
   cursor: pointer;
 }
 

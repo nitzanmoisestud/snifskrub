@@ -148,22 +148,42 @@ function moveToArray(id) {
   }
   
   
-  const thePopUp = document.querySelector("#theanimation");
-  const btn = document.querySelector("#btn");
-  function showAnimation(){
-    
-    thePopUp.style.display = "block";
-    btn.style.display ="block";
-    thePopUp.classList.add("makeMove");
-    btn.classList.add("makeMove");
+  async function rewardsShow() {
+    let response = await fetch("assets/tillykke-02.svg");
+    let mySvgData = await response.text();
+    document.querySelector("#theanimation").innerHTML = mySvgData;
+    startRewardsShow();
   }
   
-    
-    btn.addEventListener("click", function(){
-      thePopUp.style.display = "none";
-      btn.style.display = "none";
-    });
+  function startRewardsShow() {
+    let pointsNumber = document.querySelector("#tenPoints");
+    if (waterArray.length == 10){
+      pointsNumber.textContent =  waterArray.length;
+    }else if (lightArray.length == 10){
+      pointsNumber.textContent = lightArray.length;
+    }else if(elArray.length == 10){
+      pointsNumber.textContent = elArray.length;
+    }else if(heatArray.length == 10){
+      pointsNumber.textContent = heatArray.length;
+    }
+    // pointsNumber.textContent =  waterArray.length || lightArray.length || heatArray.length || elArray.length;
   
+    const closeRewards = document.querySelector("#closeX");
+    closeRewards.addEventListener("click", function(){
+      thePopUp.style.display = "none";
+     
+    });
+  }
+  
+  
+  
+  const thePopUp = document.querySelector("#theanimation");
+  
+  function showAnimation(){
+    rewardsShow() 
+    thePopUp.style.display = "block";
+    thePopUp.classList.add("makeMove");
+  }
   }
 
 function renderToSvgBox() {
