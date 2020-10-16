@@ -13,7 +13,7 @@ const rooms = document.querySelectorAll(".room-icon");
 const background = document.getElementById("bgImage");
 const fox = document.querySelector(".snif");
 
-var bridge = document.querySelector("#bridge"),
+let bridge = document.querySelector("#bridge"),
   bridgeCanvas = bridge.getContext("2d"),
   brushRadius = (bridge.width / 100) * 5,
   img = new Image();
@@ -72,6 +72,8 @@ function setRooms(event) {
   nextArrow.dataset.index = roomIndex;
   console.log(nextArrow);
   nextArrow.addEventListener("click", nextRoom);
+
+ 
 }
 
 function nextRoom(event) {
@@ -101,9 +103,12 @@ function changeRoom(event) {
   let dataRoom = event.currentTarget.dataset.room;
   const fox = document.querySelector(".snif");
 
+  const bridgeContainer = document.querySelector("#bridgeContainer");
+  
   renderBg(dataRoom);
 
   loadElementsSvg(dataRoom);
+
 }
 
 function exitRoom(event) {
@@ -114,10 +119,8 @@ function exitRoom(event) {
 
   svgArtboard.style.display = 'block'
   window.location.reload(true);
-  // img.style.display = "none";
   rooms.forEach((room) => {
     room.style.display = "block";
-    // ring.style.display = "none";
     
   });
 }
@@ -130,7 +133,7 @@ function renderBg(room) {
   console.log(room,'in renderbg');
   img.src = `scrub-assets/${room}.png`;
 }
-img.src;
+// img.src;
 
 async function loadElementsSvg(room) {
   let res = await fetch(`scrub-assets/${room}.svg`);
@@ -196,9 +199,7 @@ function renderToSvgBox() {
 }
 
 
-// img.filename = "/scrub-assets/foreground.png";
 
-// img.src = img.filename;
 
 function detectLeftButton(event) {
   return true;
