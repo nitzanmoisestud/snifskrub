@@ -227,7 +227,7 @@ elArray.push(this);
 console.log("el", elArray.length);
 document.querySelector("#e-points").textContent = elArray.length;
 document.querySelector(".e-circle").classList.remove("hide");
-if(elArray.length >= 40){
+if(elArray.length >= 5){
   
   showAnimation();
   
@@ -237,7 +237,7 @@ heatArray.push(this);
 console.log("heat", heatArray.length);
 document.querySelector("#h-points").textContent = heatArray.length;
 document.querySelector(".h-circle").classList.remove("hide");
-if(heatArray.length >= 40){
+if(heatArray.length >= 5){
   
   showAnimation();
   
@@ -247,7 +247,7 @@ lightArray.push(this);
 console.log("light", lightArray.length);
 document.querySelector("#l-points").textContent = lightArray.length;
 document.querySelector(".l-circle").classList.remove("hide");
-if(lightArray.length >= 40){
+if(lightArray.length >= 10){
   
   showAnimation();
   
@@ -259,7 +259,7 @@ console.log("water", waterArray.length);
 
 document.querySelector("#w-points").textContent = waterArray.length;
 document.querySelector(".w-circle").classList.remove("hide");
-if(waterArray.length >= 40){
+if(waterArray.length >= 5){
   
   showAnimation();
   
@@ -276,13 +276,13 @@ async function rewardsShow() {
 
 function startRewardsShow() {
   let pointsNumber = document.querySelector("#tenPoints");
-  if (waterArray.length == 40){
+  if (waterArray.length == 5){
     pointsNumber.textContent =  waterArray.length;
-  }else if (lightArray.length == 40){
+  }else if (lightArray.length == 10){
     pointsNumber.textContent = lightArray.length;
-  }else if(elArray.length == 40){
+  }else if(elArray.length == 5){
     pointsNumber.textContent = elArray.length;
-  }else if(heatArray.length == 40){
+  }else if(heatArray.length == 5){
     pointsNumber.textContent = heatArray.length;
   }
   //pointsNumber.textContent =  waterArray.length || lightArray.length || heatArray.length || elArray.length;
