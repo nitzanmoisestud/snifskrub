@@ -149,6 +149,9 @@ header > nav {
 #homepage {
   z-index: 2;
 }
+#homepage1 {
+  z-index: 2;
+}
 .levels {
   display: flex;
   justify-content: center;
