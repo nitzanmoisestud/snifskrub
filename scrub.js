@@ -19,8 +19,8 @@ var bridge = document.querySelector("#bridge"),
   brushRadius = (bridge.width / 100) * 5,
   img = new Image();
 
-if (brushRadius > 100) {
-  brushRadius = 100;
+if (brushRadius > 25) {
+  brushRadius = 25;
 }
 
 //start function to choose the rooms from index.html
