@@ -8,30 +8,30 @@ body {
 svg > .rooms > .bedroom {
   width: 24vw;
   height: auto;
-  x: 10%;
-  y: 12%;
+  /* x: 10%;
+  y: 12%; */
   cursor: pointer;
 }
 svg > .rooms > .kitchen {
   width: 24vw;
   height: auto;
-  x: 10%;
-  y: 55%;
+  /* x: 10%;
+  y: 55%; */
   cursor: pointer;
 }
 
 svg > .rooms > .bathroom {
   width: auto;
   height: 30vh;
-  x: 70%;
-  y: 18%;
+  /* x: 70%;
+  y: 18%; */
   cursor: pointer;
 }
 svg > .rooms > .livingroom {
   width: 24vw;
   height: auto;
-  x: 70%;
-  y: 55%;
+  /* x: 70%;
+  y: 55%; */
   cursor: pointer;
 }
 .snif {
